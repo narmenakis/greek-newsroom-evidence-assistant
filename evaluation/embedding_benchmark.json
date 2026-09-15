@@ -1,0 +1,58 @@
+{
+  "benchmark_id": "tempi-embedding-benchmark-v1",
+  "corpus": "sample_database.csv",
+  "question_fixture": "evaluation/tempi_questions.jsonl",
+  "answerable_cases": 10,
+  "chunk_size_tokens": 384,
+  "chunk_overlap_tokens": 64,
+  "results": [
+    {
+      "model": "intfloat/multilingual-e5-large-instruct",
+      "status": "passed",
+      "metrics": {
+        "answerable_cases": 10,
+        "recall_at_5": 0.483333,
+        "recall_at_10": 0.783333,
+        "mrr": 0.516667,
+        "ndcg_at_10": 0.545581
+      },
+      "elapsed_seconds": 678.691,
+      "peak_memory_mb": 2317.6,
+      "detail_report": "embedding_benchmark_e5_large.json"
+    },
+    {
+      "model": "intfloat/multilingual-e5-base",
+      "status": "passed",
+      "metrics": {
+        "answerable_cases": 10,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.666667,
+        "mrr": 0.303571,
+        "ndcg_at_10": 0.393821
+      },
+      "elapsed_seconds": 295.131,
+      "peak_memory_mb": 1663.05,
+      "detail_report": "embedding_benchmark_e5_base.json"
+    },
+    {
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "status": "passed_mps",
+      "device": "mps",
+      "metrics": {
+        "answerable_cases": 10,
+        "recall_at_5": 0.416667,
+        "recall_at_10": 0.466667,
+        "mrr": 0.488333,
+        "ndcg_at_10": 0.40595
+      },
+      "elapsed_seconds": 161.154,
+      "peak_memory_mb": 3904.17,
+      "detail_report": "embedding_benchmark_qwen_mps.json"
+    }
+  ],
+  "selection": {
+    "status": "selected",
+    "candidate": "intfloat/multilingual-e5-large-instruct",
+    "reason": "It has the best measured nDCG@10 and Recall@5 while remaining below the 8 GB peak-memory limit. E5-base is 15.1 absolute nDCG points lower, and the native MPS Qwen run scored lower on both metrics."
+  }
+}

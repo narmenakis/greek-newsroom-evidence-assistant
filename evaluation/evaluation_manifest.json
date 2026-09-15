@@ -1,0 +1,91 @@
+{
+  "manifest_id": "tempi-evaluation-v1",
+  "schema_version": "tempi-questions-v1",
+  "status": "human_confirmed_labels",
+  "corpus": {
+    "manifest": "corpus_manifest.json",
+    "corpus_id": "tempi-dev-200-v1",
+    "expected_article_count": 200,
+    "validated_article_count": 199,
+    "scraped_csv_sha256": "1e296a8bffa7c759814d52d3e0b8ad85908da65b694d7a23629a044736a784d0",
+    "labels_are_url_level": true
+  },
+  "questions": {
+    "fixture": "tempi_questions.jsonl",
+    "schema": "tempi_questions.schema.json",
+    "question_count": 11,
+    "answerable_count": 10,
+    "unanswerable_count": 1,
+    "languages": ["el"],
+    "categories": [
+      "conflicting_reports",
+      "fact_retrieval",
+      "follow_up",
+      "metadata_filter",
+      "negative_control",
+      "no_answer",
+      "synthesis",
+      "timeline"
+    ],
+    "task_types": [
+      "abstention",
+      "fact_lookup",
+      "filtered_retrieval",
+      "follow_up",
+      "synthesis",
+      "temporal_comparison",
+      "timeline"
+    ],
+    "difficulties": ["easy", "hard", "medium"],
+    "review_statuses": ["human_confirmed"],
+    "labeled_url_article_id_pairs": 24,
+    "sha256": "b2ba0b3bb7fa9390dccb816896917d37d716f29e6fc4378fbdba1f3553c9e3e5"
+  },
+  "label_review": {
+    "reviewed_on": "2026-09-02",
+    "reviewer": "assistant_pre_review_and_project_owner_confirmation",
+    "status": "human_confirmed",
+    "basis": "Assistant inspection of local article titles and bodies in sample_database.csv, deterministic canonical-URL/article-ID validation, and project-owner confirmation using evaluation/label_review.md.",
+    "reviewed_case_count": 11,
+    "validated_label_pair_count": 24,
+    "assistant_corrected_url_count": 2,
+    "human_revised_relevance_label_count": 1,
+    "corrections": [
+      "tempi-investigation-001: replaced an absent 562303492 URL with the corpus article 562300879 covering the same investigation thread",
+      "tempi-followup-001: corrected the 562302610 URL slug to the canonical URL present in the corpus",
+      "tempi-fact-001: removed the older 38-death article because it does not directly answer the later official-update question; it remains labeled in tempi-conflict-001"
+    ]
+  },
+  "label_policy": "Labels received assistant content review, deterministic corpus-identity validation, and project-owner confirmation. This is retrieval-ground-truth review, not automated semantic claim-to-citation validation.",
+  "retrieval_benchmark": {
+    "report": "retrieval_benchmark.json",
+    "benchmark_id": "tempi-retrieval-benchmark-v1",
+    "systems": ["dense", "hybrid"],
+    "retrieval_limit": 10,
+    "answerable_cases_in_denominator": 10,
+    "no_answer_cases_excluded": 1,
+    "metric_definition": "Article-level Recall@K is the fraction of labeled relevant articles found in the first K unique article results; hit@K records whether any relevant article was found; MRR and nDCG@10 use the first 10 unique article results."
+  },
+  "generation_contract": {
+    "status": "passed_mocked_contract_tests",
+    "test_file": "tests/test_phase4_generation_contracts.py",
+    "report_json": "generation_contract_benchmark.json",
+    "report_markdown": "generation_contract_report.md",
+    "runner": "src/journalism_rag/evaluation/generation_contract_benchmark.py",
+    "case_count": 9,
+    "focused_test_method_count": 9,
+    "provider_calls": 0,
+    "coverage": [
+      "language-matched answers",
+      "structural citation validity",
+      "uncited-claim coverage warning",
+      "language-matched abstention",
+      "source-conflict prompt guidance",
+      "prompt-injection evidence boundary",
+      "typed HTTP provider failures",
+      "typed malformed provider responses"
+    ],
+    "boundary": "These are deterministic contract checks with mocked provider responses, not live model-quality results."
+  },
+  "evaluation_boundary": "This manifest defines offline retrieval cases and metadata. It does not contain generated answers, semantic citation judgments, or calibrated retrieval-score thresholds."
+}

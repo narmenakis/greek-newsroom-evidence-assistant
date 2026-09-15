@@ -1,0 +1,548 @@
+{
+  "benchmark_id": "tempi-reranker-benchmark-v1",
+  "corpus": "sample_database.csv",
+  "questions": "evaluation/tempi_questions.jsonl",
+  "question_count": 11,
+  "cases": [
+    {
+      "id": "tempi-fact-001",
+      "retrieval_query": "Πόσοι νεκροί και πόσοι αγνοούμενοι αναφέρονται στην επίσημη ενημέρωση για την τραγωδία των Τεμπών;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.516677,
+      "reranker_seconds": 2.049835,
+      "total_with_reranker_seconds": 2.566512,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562301206/tragodia-sta-tempi-stoys-38-oi-epivevaiomenoi-nekroi",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562301131/tragodia-sta-tempi-sto-nosokomeio-larisas-53-anthropoi-anazitoyn-toys-oikeioys-toys",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi",
+        "https://www.kathimerini.gr/society/562300996/tragodia-sta-tempi-agnooymenoi-kai-dyo-kyprioi-polites",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari",
+        "https://www.kathimerini.gr/society/562302892/tragodia-sta-tempi-ypo-dyskoles-synthikes-oi-ereynes-sto-vagoni-estiatorio"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562301206/tragodia-sta-tempi-stoys-38-oi-epivevaiomenoi-nekroi",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562301131/tragodia-sta-tempi-sto-nosokomeio-larisas-53-anthropoi-anazitoyn-toys-oikeioys-toys",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562301206/tragodia-sta-tempi-stoys-38-oi-epivevaiomenoi-nekroi",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562301131/tragodia-sta-tempi-sto-nosokomeio-larisas-53-anthropoi-anazitoyn-toys-oikeioys-toys",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi",
+        "https://www.kathimerini.gr/society/562300996/tragodia-sta-tempi-agnooymenoi-kai-dyo-kyprioi-polites",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari",
+        "https://www.kathimerini.gr/society/562302892/tragodia-sta-tempi-ypo-dyskoles-synthikes-oi-ereynes-sto-vagoni-estiatorio"
+      ]
+    },
+    {
+      "id": "tempi-fact-002",
+      "retrieval_query": "Τι αναφέρεται για το μοιραίο λάθος του σταθμάρχη και τις κατηγορίες που αντιμετώπισε;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.079627,
+      "reranker_seconds": 0.816214,
+      "total_with_reranker_seconds": 0.89584,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301209/tragodia-sta-tempi-o-stathmarchis-paradechthike-paraleipseis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562301530/tragodia-sta-tempi-ston-eisaggelea-simera-o-stathmarchis-larisas-paradechthike-to-moiraio-sfalma-toy",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562300765/sygkroysi-trenon-sta-tempi-ti-katigories-antimetopizei-o-stathmarchis-larisas",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562301209/tragodia-sta-tempi-o-stathmarchis-paradechthike-paraleipseis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562300765/sygkroysi-trenon-sta-tempi-ti-katigories-antimetopizei-o-stathmarchis-larisas",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301209/tragodia-sta-tempi-o-stathmarchis-paradechthike-paraleipseis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562301530/tragodia-sta-tempi-ston-eisaggelea-simera-o-stathmarchis-larisas-paradechthike-to-moiraio-sfalma-toy",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562300765/sygkroysi-trenon-sta-tempi-ti-katigories-antimetopizei-o-stathmarchis-larisas",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis"
+      ]
+    },
+    {
+      "id": "tempi-cause-001",
+      "retrieval_query": "Ποιες αδυναμίες του ελληνικού σιδηροδρόμου αναφέρονται στα δημοσιεύματα μετά τη σύγκρουση;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.080161,
+      "reranker_seconds": 0.686263,
+      "total_with_reranker_seconds": 0.766423,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562303072/tragodia-sta-tempi-nea-24ori-apergia-ton-sidirodromikon-ayrio",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562300771/sygkroysi-trenon-sta-tempi-oi-odigoi-sto-sygkekrimeno-simeio-kinoyntai-sta-tyfla",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562300771/sygkroysi-trenon-sta-tempi-oi-odigoi-sto-sygkekrimeno-simeio-kinoyntai-sta-tyfla",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi",
+        "https://www.kathimerini.gr/society/562302094/tragodia-sta-tempi-oi-ipa-epainoyn-to-ergo-ton-diasoston",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/politics/foreign-policy/562301113/tragodia-sta-tempi-ti-symparastasi-toys-stin-ellada-ekfrazoyn-xenoi-igetes"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562303072/tragodia-sta-tempi-nea-24ori-apergia-ton-sidirodromikon-ayrio",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562300771/sygkroysi-trenon-sta-tempi-oi-odigoi-sto-sygkekrimeno-simeio-kinoyntai-sta-tyfla",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi"
+      ]
+    },
+    {
+      "id": "tempi-timeline-001",
+      "retrieval_query": "Ποια γεγονότα και προειδοποιήσεις καταγράφονται πριν και αμέσως μετά τη σύγκρουση των τρένων στα Τέμπη;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.073051,
+      "reranker_seconds": 0.672978,
+      "total_with_reranker_seconds": 0.746029,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562301503/tragodia-sta-tempi-dramatikes-proeidopoiiseis-gia-dystychima",
+        "https://www.kathimerini.gr/society/562300093/sygkroysi-trenon-sti-larisa-martyries-epivaton-poy-vgikan-sooi-apo-ta-vagonia",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi",
+        "https://www.kathimerini.gr/society/562300123/sygkroysi-trenon-sti-larisa-i-proti-episimi-anakoinosi-tis-hellenic-train",
+        "https://www.kathimerini.gr/society/562301173/tragodia-sta-tempi-i-stigmi-tis-sygkroysis-ton-dyo-trenon-vinteo-ntokoymento",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300111/sygkroysi-trenon-sti-larisa-metavainei-sta-tempi-o-nikos-pappas",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.kathimerini.gr/society/562300771/sygkroysi-trenon-sta-tempi-oi-odigoi-sto-sygkekrimeno-simeio-kinoyntai-sta-tyfla"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562301503/tragodia-sta-tempi-dramatikes-proeidopoiiseis-gia-dystychima",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562300123/sygkroysi-trenon-sti-larisa-i-proti-episimi-anakoinosi-tis-hellenic-train",
+        "https://www.kathimerini.gr/society/562300093/sygkroysi-trenon-sti-larisa-martyries-epivaton-poy-vgikan-sooi-apo-ta-vagonia",
+        "https://www.kathimerini.gr/society/562301173/tragodia-sta-tempi-i-stigmi-tis-sygkroysis-ton-dyo-trenon-vinteo-ntokoymento",
+        "https://www.kathimerini.gr/society/562300111/sygkroysi-trenon-sti-larisa-metavainei-sta-tempi-o-nikos-pappas",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.kathimerini.gr/society/562301380/tragodia-sta-tempi-oi-dialogoi-toy-stathmarchi-me-ton-michanodigo-kai-ton-kleidoycho",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562301503/tragodia-sta-tempi-dramatikes-proeidopoiiseis-gia-dystychima",
+        "https://www.kathimerini.gr/society/562300093/sygkroysi-trenon-sti-larisa-martyries-epivaton-poy-vgikan-sooi-apo-ta-vagonia",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi",
+        "https://www.kathimerini.gr/society/562300123/sygkroysi-trenon-sti-larisa-i-proti-episimi-anakoinosi-tis-hellenic-train",
+        "https://www.kathimerini.gr/society/562301173/tragodia-sta-tempi-i-stigmi-tis-sygkroysis-ton-dyo-trenon-vinteo-ntokoymento",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300111/sygkroysi-trenon-sti-larisa-metavainei-sta-tempi-o-nikos-pappas",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.kathimerini.gr/society/562300771/sygkroysi-trenon-sta-tempi-oi-odigoi-sto-sygkekrimeno-simeio-kinoyntai-sta-tyfla"
+      ]
+    },
+    {
+      "id": "tempi-investigation-001",
+      "retrieval_query": "Ποιες έρευνες και διαδικασίες ανακοινώθηκαν για τη διερεύνηση των αιτιών της τραγωδίας;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.025693,
+      "reranker_seconds": 0.697688,
+      "total_with_reranker_seconds": 0.723381,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301530/tragodia-sta-tempi-ston-eisaggelea-simera-o-stathmarchis-larisas-paradechthike-to-moiraio-sfalma-toy",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/politics/562304704/sygkroysi-trenon-sta-tempi-i-epitropi-poy-tha-diereynisei-ta-aitia-tis-tragodias",
+        "https://www.kathimerini.gr/society/562302610/tragodia-sta-tempi-nea-paraggelia-ntogiakoy-zitei-ereyna-pros-kathe-kateythynsi",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/politics/562304704/sygkroysi-trenon-sta-tempi-i-epitropi-poy-tha-diereynisei-ta-aitia-tis-tragodias",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562302610/tragodia-sta-tempi-nea-paraggelia-ntogiakoy-zitei-ereyna-pros-kathe-kateythynsi",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562301530/tragodia-sta-tempi-ston-eisaggelea-simera-o-stathmarchis-larisas-paradechthike-to-moiraio-sfalma-toy",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/politics/562304704/sygkroysi-trenon-sta-tempi-i-epitropi-poy-tha-diereynisei-ta-aitia-tis-tragodias",
+        "https://www.kathimerini.gr/society/562302610/tragodia-sta-tempi-nea-paraggelia-ntogiakoy-zitei-ereyna-pros-kathe-kateythynsi",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon"
+      ]
+    },
+    {
+      "id": "tempi-response-001",
+      "retrieval_query": "Ποιες κινητοποιήσεις και απεργίες έγιναν μετά το δυστύχημα των Τεμπών;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.069181,
+      "reranker_seconds": 0.685431,
+      "total_with_reranker_seconds": 0.754612,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/society/562305055/tragodia-sta-tempi-apergia-ton-sidirodromikon-kai-to-savvatokyriako",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi",
+        "https://www.kathimerini.gr/society/562303072/tragodia-sta-tempi-nea-24ori-apergia-ton-sidirodromikon-ayrio",
+        "https://www.kathimerini.gr/society/562300564/sygkroysi-trenon-sta-tempi-mesisties-oi-simaies-sta-ktiria-tis-komision"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562305055/tragodia-sta-tempi-apergia-ton-sidirodromikon-kai-to-savvatokyriako",
+        "https://www.kathimerini.gr/society/562303072/tragodia-sta-tempi-nea-24ori-apergia-ton-sidirodromikon-ayrio",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/society/562301359/tragodia-sta-tempi-24ori-apergia-ton-sidirodromikon-ayrio-kanena-dromologio-tis-hellenic-train",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi",
+        "https://www.kathimerini.gr/society/562302094/tragodia-sta-tempi-oi-ipa-epainoyn-to-ergo-ton-diasoston",
+        "https://www.kathimerini.gr/society/562305298/tragodia-sta-tempi-ta-thanasima-mystika-ton-dialogon-stathmarchi-kleidoychoy-michanodigoy"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/society/562305055/tragodia-sta-tempi-apergia-ton-sidirodromikon-kai-to-savvatokyriako",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/politics/562303513/koytsoympas-prodiagegrammeno-egklima-sta-tempi",
+        "https://www.kathimerini.gr/society/562303072/tragodia-sta-tempi-nea-24ori-apergia-ton-sidirodromikon-ayrio",
+        "https://www.kathimerini.gr/society/562300564/sygkroysi-trenon-sta-tempi-mesisties-oi-simaies-sta-ktiria-tis-komision"
+      ]
+    },
+    {
+      "id": "tempi-conflict-001",
+      "retrieval_query": "Πώς μεταβάλλονται οι αναφορές για τον αριθμό των νεκρών και των αγνοουμένων στα δημοσιεύματα;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.024597,
+      "reranker_seconds": 0.685098,
+      "total_with_reranker_seconds": 0.709695,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562305319/tragodia-sta-tempi-saronan-to-simeio-gia-ton-entopismo-ton-agnooymenon",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562305319/tragodia-sta-tempi-saronan-to-simeio-gia-ton-entopismo-ton-agnooymenon",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562303474/tragodia-sta-tempi-perimenontas-apantiseis-apo-to-dna"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562305319/tragodia-sta-tempi-saronan-to-simeio-gia-ton-entopismo-ton-agnooymenon",
+        "https://www.kathimerini.gr/society/562303108/tempi-kraygi-agonias-gia-ta-thymata-tis-tragodias-sygklonizoyn-ta-logia-ton-syggenon",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi",
+        "https://www.kathimerini.gr/society/562302847/tragodia-sta-tempi-stoys-57-oi-nekroi-leei-i-iatrodikastis-roympini-leontari",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562300951/tragodia-sta-tempi-paradechthike-to-moiraio-lathos-toy-o-stathmarchis-symfona-me-plirofories",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/society/562303060/tragodia-sta-tempi-57-nekroi-kai-56-agnooymenoi-episimi-enimerosi"
+      ]
+    },
+    {
+      "id": "tempi-followup-001",
+      "retrieval_query": "Ποια γεγονότα καταγράφονται μετά τη σύγκρουση στα Τέμπη;\nΠοια από αυτά συνδέονται με την έρευνα και ποια με τις κινητοποιήσεις;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.069879,
+      "reranker_seconds": 0.684987,
+      "total_with_reranker_seconds": 0.754866,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300111/sygkroysi-trenon-sti-larisa-metavainei-sta-tempi-o-nikos-pappas",
+        "https://www.kathimerini.gr/society/562305055/tragodia-sta-tempi-apergia-ton-sidirodromikon-kai-to-savvatokyriako",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300198/sygkroysi-trenon-sta-tempi-kataggelia-epivati-toy-moiraioy-intercity-pame-kai-opoy-vgei",
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/society/562300093/sygkroysi-trenon-sti-larisa-martyries-epivaton-poy-vgikan-sooi-apo-ta-vagonia"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562305655/kinitopoiiseis-kai-sti-thessaloniki-gia-tin-tragodia-sta-tempi",
+        "https://www.kathimerini.gr/society/562302874/tragodia-sta-tempi-synechizontai-oi-ereynes-sto-trito-vagoni-ayxanetai-o-arithmos-ton-nekron",
+        "https://www.kathimerini.gr/society/562301476/tragodia-sta-tempi-kapoioi-oyrliazan-gia-voitheia-itan-chaos",
+        "https://www.kathimerini.gr/society/562300111/sygkroysi-trenon-sti-larisa-metavainei-sta-tempi-o-nikos-pappas",
+        "https://www.kathimerini.gr/society/562305055/tragodia-sta-tempi-apergia-ton-sidirodromikon-kai-to-savvatokyriako",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562304917/tragodia-sta-tempi-poreia-mathiton-stin-pallini-vinteo",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos"
+      ]
+    },
+    {
+      "id": "tempi-filter-001",
+      "retrieval_query": "Τι αναφέρει η Καθημερινή για την τηλεδιοίκηση και τα λάθη πριν από την τραγωδία;",
+      "candidate_count": 20,
+      "metadata_filter": {
+        "website": {
+          "$in": [
+            "kathimerini.gr"
+          ]
+        }
+      },
+      "retrieval_seconds": 0.07197,
+      "reranker_seconds": 0.674081,
+      "total_with_reranker_seconds": 0.746052,
+      "baseline_urls": [
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562300981/tragodia-sta-tempi-ti-tha-poyme-ston-kosmo-poy-echase-ta-paidia-toy",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/politics/562304806/tragodia-sta-tempi-ta-tessera-erotimata-toy-syriza-kai-i-apantisi-oikonomoy",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi"
+      ],
+      "reranked_urls": [
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562300981/tragodia-sta-tempi-ti-tha-poyme-ston-kosmo-poy-echase-ta-paidia-toy",
+        "https://www.kathimerini.gr/society/562305298/tragodia-sta-tempi-ta-thanasima-mystika-ton-dialogon-stathmarchi-kleidoychoy-michanodigoy",
+        "https://www.kathimerini.gr/politics/562304806/tragodia-sta-tempi-ta-tessera-erotimata-toy-syriza-kai-i-apantisi-oikonomoy",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/society/562300852/tempi-to-chroniko-mias-proanaggeltheisas-tragodias",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi"
+      ],
+      "diversity_urls": [
+        "https://www.kathimerini.gr/society/562307326/tragodia-sta-tempi-nea-prothesmia-elave-stathmarchis-tin-kyriaki-i-apologia-toy",
+        "https://www.kathimerini.gr/society/562301371/tempi-lathi-kai-paraleipseis-piso-apo-tin-ethniki-tragodia",
+        "https://www.kathimerini.gr/society/562300981/tragodia-sta-tempi-ti-tha-poyme-ston-kosmo-poy-echase-ta-paidia-toy",
+        "https://www.kathimerini.gr/politics/562302415/oikonomoy-gia-tempi-echoyn-taytopoiithei-ennea-soroi-meso-deigmatos-dna",
+        "https://www.kathimerini.gr/politics/562301563/i-tragodia-sta-tempi-kai-ta-senaria-gia-ton-chrono-ton-eklogon",
+        "https://www.kathimerini.gr/society/562305349/tragodia-sta-tempi-tha-mporoysame-na-eimaste-emeis-sti-thesi-ton-paidion",
+        "https://www.kathimerini.gr/politics/562304806/tragodia-sta-tempi-ta-tessera-erotimata-toy-syriza-kai-i-apantisi-oikonomoy",
+        "https://www.kathimerini.gr/society/562302172/tragodia-sta-tempi-me-varies-katigories-ston-eisaggelea-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303291/tempi-o-stathmarchis-feretai-na-eidopoiithike-17-lepta-prin-apo-ti-sygkroysi"
+      ]
+    },
+    {
+      "id": "negative-001",
+      "retrieval_query": "Ποιοι δρόμοι θα κλείσουν στην Αθήνα για την Πρωτομαγιά;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.078624,
+      "reranker_seconds": 0.687305,
+      "total_with_reranker_seconds": 0.765929,
+      "baseline_urls": [
+        "https://www.skai.gr/news/greece/kykloforiakes-rythmiseis-stin-athina-tin-protomagia-poioi-dromoi-tha-kleisoun-kai-pote-1",
+        "https://www.skai.gr/news/greece/ergatiki-protomagia-pos-tha-kinithoun-simera-ta-mesa-metaforas-poia-dromologia-tropopoioun",
+        "https://www.skai.gr/news/world/kouva-oi-eortasmoi-gia-tin-protomagia-anavallontai-logo-kataigidon",
+        "https://www.zougla.gr/kosmos/article/kouva-i-eortasmi-gia-tin-protomagia-anavalonte-logo-kategidon",
+        "https://www.skai.gr/news/greece/eortologio-poioi-giortazoun-simera-protomagia",
+        "https://www.zougla.gr/politiki/article/sinavlia-tis-komatikis-organosis-ke-gia-tin-ergatiki-protomagia",
+        "https://www.efsyn.gr/politiki/antipoliteysi/431499_dyo-diahronikes-proteraiotites",
+        "https://www.skai.gr/news/weather/kairos-simera-vroxeri-i-protomagia-pou-tha-vreksei",
+        "https://www.skai.gr/news/world/google-doodle-afieromeno-stin-ergatiki-protomagia",
+        "https://www.efsyn.gr/politiki/antipoliteysi/431496_foros-timis-stoys-agonistes"
+      ],
+      "reranked_urls": [
+        "https://www.skai.gr/news/greece/kykloforiakes-rythmiseis-stin-athina-tin-protomagia-poioi-dromoi-tha-kleisoun-kai-pote-1",
+        "https://www.skai.gr/news/greece/ergatiki-protomagia-pos-tha-kinithoun-simera-ta-mesa-metaforas-poia-dromologia-tropopoioun",
+        "https://www.skai.gr/news/weather/kairos-simera-vroxeri-i-protomagia-pou-tha-vreksei",
+        "https://www.skai.gr/news/greece/eortologio-poioi-giortazoun-simera-protomagia",
+        "https://www.efsyn.gr/politiki/antipoliteysi/431496_foros-timis-stoys-agonistes",
+        "https://www.zougla.gr/politiki/article/sinavlia-tis-komatikis-organosis-ke-gia-tin-ergatiki-protomagia",
+        "https://www.skai.gr/news/greece/karagiannis-exoume-dimopratisei-erga-ypsous-14-dis-eyro-tin-teleytaia-4etia-i-ellada-exei",
+        "https://www.zougla.gr/kosmos/article/kouva-i-eortasmi-gia-tin-protomagia-anavalonte-logo-kategidon",
+        "https://www.zougla.gr/greece/article/protomagia-me-vroxes-ke-kategides-2084909",
+        "https://www.skai.gr/news/world/kouva-oi-eortasmoi-gia-tin-protomagia-anavallontai-logo-kataigidon"
+      ],
+      "diversity_urls": [
+        "https://www.skai.gr/news/greece/kykloforiakes-rythmiseis-stin-athina-tin-protomagia-poioi-dromoi-tha-kleisoun-kai-pote-1",
+        "https://www.zougla.gr/kosmos/article/kouva-i-eortasmi-gia-tin-protomagia-anavalonte-logo-kategidon",
+        "https://www.efsyn.gr/politiki/antipoliteysi/431499_dyo-diahronikes-proteraiotites",
+        "https://www.kathimerini.gr/society/562299394/atychima-me-amaxostoichia-sto-dromologio-athina-thessaloniki-exo-apo-ta-tempi-anafores-gia-traymaties",
+        "https://www.skai.gr/news/greece/ergatiki-protomagia-pos-tha-kinithoun-simera-ta-mesa-metaforas-poia-dromologia-tropopoioun",
+        "https://www.zougla.gr/politiki/article/sinavlia-tis-komatikis-organosis-ke-gia-tin-ergatiki-protomagia",
+        "https://www.efsyn.gr/politiki/antipoliteysi/431496_foros-timis-stoys-agonistes",
+        "https://www.kathimerini.gr/society/562307521/tragodia-sta-tempi-nea-sygkentrosi-sto-syntagma",
+        "https://www.skai.gr/news/world/kouva-oi-eortasmoi-gia-tin-protomagia-anavallontai-logo-kataigidon",
+        "https://www.zougla.gr/greece/article/protomagia-me-vroxes-ke-kategides-2084909"
+      ]
+    },
+    {
+      "id": "noanswer-001",
+      "retrieval_query": "Ποια ήταν τα τελικά πορίσματα μιας έρευνας που δεν περιλαμβάνεται στα δημοσιεύματα του corpus;",
+      "candidate_count": 20,
+      "metadata_filter": null,
+      "retrieval_seconds": 0.024971,
+      "reranker_seconds": 0.671907,
+      "total_with_reranker_seconds": 0.696878,
+      "baseline_urls": [
+        "https://www.efsyn.gr/politiki/431907_trypa-gdpr-sto-ypoyrgeio-esoterikon",
+        "https://www.efsyn.gr/politiki/431508_den-katebainei-stis-eyroekloges-i-anametrisi",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562303474/tragodia-sta-tempi-perimenontas-apantiseis-apo-to-dna",
+        "https://www.kathimerini.gr/society/562305298/tragodia-sta-tempi-ta-thanasima-mystika-ton-dialogon-stathmarchi-kleidoychoy-michanodigoy",
+        "https://www.efsyn.gr/politiki/i-apopsi-tis-efsyn/431723_doro-ston-eghorio-fasismo",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi"
+      ],
+      "reranked_urls": [
+        "https://www.efsyn.gr/politiki/431907_trypa-gdpr-sto-ypoyrgeio-esoterikon",
+        "https://www.efsyn.gr/politiki/431508_den-katebainei-stis-eyroekloges-i-anametrisi",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562302625/tragodia-sta-tempi-ayto-to-meros-moiazei-me-katarameno-iatrodikastes-miloyn-stin-k",
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.kathimerini.gr/society/562300879/tragodia-sta-tempi-o-ntogiakos-zita-tin-epispeysi-ton-anakriseon",
+        "https://www.efsyn.gr/politiki/i-apopsi-tis-efsyn/431723_doro-ston-eghorio-fasismo",
+        "https://www.kathimerini.gr/society/562300981/tragodia-sta-tempi-ti-tha-poyme-ston-kosmo-poy-echase-ta-paidia-toy",
+        "https://www.kathimerini.gr/society/562302142/tragodia-sta-tempi-xekinoyn-kai-pali-oi-ereynes-sto-trito-vagoni-ston-anakriti-o-stathmarchis",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon"
+      ],
+      "diversity_urls": [
+        "https://www.efsyn.gr/politiki/431907_trypa-gdpr-sto-ypoyrgeio-esoterikon",
+        "https://www.kathimerini.gr/society/562304785/tragodia-sta-tempi-ereyna-tis-trochaias-larisas-sta-grafeia-toy-ose",
+        "https://www.efsyn.gr/politiki/431508_den-katebainei-stis-eyroekloges-i-anametrisi",
+        "https://www.kathimerini.gr/society/562305025/tempi-epilogos-se-ereynes-kai-taytopoiiseis-o-golgothas-ton-syggenon",
+        "https://www.kathimerini.gr/society/562303438/tragodia-sta-tempi-oi-pliges-toy-ellinikoy-sidirodromoy-i-archi-poy-evlepe-ta-trena-na-pernoyn",
+        "https://www.efsyn.gr/politiki/i-apopsi-tis-efsyn/431723_doro-ston-eghorio-fasismo",
+        "https://www.kathimerini.gr/society/562303492/tragodia-sta-tempi-ereyna-pros-kathe-kateythynsi-zitei-o-is-ntogiakos",
+        "https://www.kathimerini.gr/society/562303474/tragodia-sta-tempi-perimenontas-apantiseis-apo-to-dna",
+        "https://www.kathimerini.gr/society/562305298/tragodia-sta-tempi-ta-thanasima-mystika-ton-dialogon-stathmarchi-kleidoychoy-michanodigoy",
+        "https://www.kathimerini.gr/society/562304734/pyrosvestiki-den-echoyn-vrethei-thraysmata-fialon-ygraerioy-ston-choro-toy-dystychimatos-sta-tempi"
+      ]
+    }
+  ],
+  "baseline": {
+    "metrics": {
+      "answerable_cases": 10,
+      "recall_at_5": 0.45,
+      "recall_at_10": 0.65,
+      "mrr": 0.481667,
+      "ndcg_at_10": 0.463935
+    },
+    "retrieval_seconds": 1.114431
+  },
+  "reranked": {
+    "metrics": {
+      "answerable_cases": 10,
+      "recall_at_5": 0.416667,
+      "recall_at_10": 0.616667,
+      "mrr": 0.673611,
+      "ndcg_at_10": 0.539404
+    },
+    "retrieval_seconds": 1.114431,
+    "reranker_seconds": 9.011787,
+    "total_seconds": 10.126218
+  },
+  "diversity": {
+    "metrics": {
+      "answerable_cases": 10,
+      "recall_at_5": 0.45,
+      "recall_at_10": 0.65,
+      "mrr": 0.481667,
+      "ndcg_at_10": 0.463935
+    }
+  },
+  "candidate_limit": 20,
+  "retriever_ready_seconds": 3.538,
+  "reranker_load_seconds": 2.125,
+  "reranker_model": "BAAI/bge-reranker-v2-m3",
+  "reranker_device": "mps",
+  "reranker_batch_size": 16,
+  "reranker_max_length": 256,
+  "peak_memory_mb": 2790.69
+}

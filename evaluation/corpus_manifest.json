@@ -1,0 +1,42 @@
+{
+  "corpus_id": "tempi-dev-200-v1",
+  "source_file": "links.txt",
+  "article_count_expected": 200,
+  "unique_url_count": 200,
+  "links_sha256": "7a839ad4c13d427b6c18b1631835db17859129c5ced2a7adccc393a309a4acca",
+  "source_distribution": {
+    "www.kathimerini.gr": 100,
+    "www.efsyn.gr": 50,
+    "www.skai.gr": 25,
+    "www.zougla.gr": 25
+  },
+  "scope": "Tempi-heavy development corpus with non-Tempi negative and diversity cases",
+  "scraped_dataset": "sample_database.csv",
+  "scraped_dataset_status": "complete_with_rejections",
+  "scraped_row_count": 199,
+  "scraped_source_distribution": {
+    "kathimerini.gr": 100,
+    "efsyn.gr": 49,
+    "skai.gr": 25,
+    "zougla.gr": 25
+  },
+  "scraped_csv_bytes": 977992,
+  "scraped_csv_sha256": "1e296a8bffa7c759814d52d3e0b8ad85908da65b694d7a23629a044736a784d0",
+  "rejected_urls": [
+    {
+      "url": "https://www.efsyn.gr/politiki/infonews/431682_perimenontas-tin-anatasi",
+      "reason": "HTTP 404"
+    }
+  ],
+  "quality_checks": {
+    "empty_titles": 0,
+    "empty_bodies": 0,
+    "duplicate_urls": 0,
+    "missing_publication_dates": 1,
+    "not_found_page_candidates": 0
+  },
+  "vector_collection": "journalism_rag__e5-large-instruct",
+  "vector_chunk_count": 518,
+  "generation_baseline": "unavailable-with-current-local-machine",
+  "label_status": "human-confirmed"
+}

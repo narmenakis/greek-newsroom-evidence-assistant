@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tempi-questions-v1",
+  "title": "Tempi journalism retrieval evaluation case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "language",
+    "category",
+    "task_type",
+    "topic",
+    "difficulty",
+    "question",
+    "answerable",
+    "relevant_urls",
+    "relevant_article_ids",
+    "acceptable_evidence",
+    "label_review"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "language": {"enum": ["el", "en"]},
+    "category": {
+      "enum": [
+        "fact_retrieval",
+        "synthesis",
+        "timeline",
+        "conflicting_reports",
+        "follow_up",
+        "metadata_filter",
+        "negative_control",
+        "no_answer"
+      ]
+    },
+    "task_type": {
+      "enum": [
+        "fact_lookup",
+        "synthesis",
+        "timeline",
+        "temporal_comparison",
+        "follow_up",
+        "filtered_retrieval",
+        "abstention"
+      ]
+    },
+    "topic": {"type": "string", "minLength": 1},
+    "difficulty": {"enum": ["easy", "medium", "hard"]},
+    "question": {"type": "string", "minLength": 1},
+    "answerable": {"type": "boolean"},
+    "conversation_context": {"type": "string", "minLength": 1},
+    "filters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "author": {"type": ["string", "array"]},
+        "website": {"type": ["string", "array"]},
+        "section": {"type": ["string", "array"]},
+        "datetime": {"type": ["number", "string", "array"]}
+      }
+    },
+    "relevant_urls": {
+      "type": "array",
+      "items": {"type": "string", "format": "uri"}
+    },
+    "relevant_article_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[0-9a-f]{16}$"}
+    },
+    "acceptable_evidence": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "label_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "basis", "notes"],
+      "properties": {
+        "status": {
+          "enum": [
+            "assistant_reviewed_pending_human_confirmation",
+            "human_confirmed",
+            "needs_revision"
+          ]
+        },
+        "basis": {"type": "string", "minLength": 1},
+        "notes": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"answerable": {"const": false}}},
+      "then": {
+        "properties": {
+          "relevant_urls": {"maxItems": 0},
+          "relevant_article_ids": {"maxItems": 0},
+          "acceptable_evidence": {"maxItems": 0}
+        }
+      },
+      "else": {
+        "properties": {
+          "relevant_urls": {"minItems": 1},
+          "relevant_article_ids": {"minItems": 1},
+          "acceptable_evidence": {"minItems": 1}
+        }
+      }
+    }
+  ]
+}

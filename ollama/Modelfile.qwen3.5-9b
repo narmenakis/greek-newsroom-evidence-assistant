@@ -1,0 +1,5 @@
+FROM qwen3.5:9b-q4_K_M
+
+# Keep enough room for retrieved evidence and a substantial answer while
+# bounding the KV-cache allocation on the 24 GB demonstration Mac.
+PARAMETER num_ctx 32768

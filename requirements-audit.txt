@@ -1,0 +1,5 @@
+# Audit-only development tools. Install after the runtime lock with:
+# ./.venv/bin/pip install -r requirements-audit.txt
+coverage==7.10.7
+pytest==8.4.2
+ruff==0.13.2

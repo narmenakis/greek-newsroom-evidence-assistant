@@ -1,0 +1,20 @@
+{
+  "benchmark_id": "tempi-embedding-benchmark-v1",
+  "model": "Qwen/Qwen3-Embedding-0.6B",
+  "status": "passed_mps",
+  "device": "mps",
+  "download_status": "completed",
+  "batch_size": 16,
+  "chunks": 1455,
+  "metrics": {
+    "answerable_cases": 10,
+    "recall_at_5": 0.416667,
+    "recall_at_10": 0.466667,
+    "mrr": 0.488333,
+    "ndcg_at_10": 0.40595
+  },
+  "elapsed_seconds": 161.154,
+  "peak_memory_mb": 3904.17,
+  "detail_report": "embedding_benchmark_qwen_mps.json",
+  "previous_cpu_attempt": "aborted after exceeding the practical runtime budget; this MPS run is the comparable quality result."
+}

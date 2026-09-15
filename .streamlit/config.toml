@@ -1,0 +1,4 @@
+# Keep Streamlit's browser upload guard aligned with the application-level
+# UploadLimits.max_source_bytes bound (5,000,000 bytes / 5 MB decimal).
+[server]
+maxUploadSize = 5

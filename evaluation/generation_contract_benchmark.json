@@ -1,0 +1,123 @@
+{
+  "benchmark_id": "tempi-generation-contracts-v1",
+  "evaluation_type": "deterministic_mocked_generation_contract",
+  "provider_mode": "mocked",
+  "external_provider_calls": 0,
+  "cases": [
+    {
+      "id": "valid_language_and_citations",
+      "expected_status": "answered",
+      "observed_status": "answered",
+      "passed": true,
+      "details": {
+        "used_source_s1": true,
+        "citation_valid": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "english_answer_language",
+      "expected_status": "answered",
+      "observed_status": "answered",
+      "passed": true,
+      "details": {
+        "answer_preserved": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "language_matched_abstention",
+      "expected_status": "abstained",
+      "observed_status": "abstained",
+      "passed": true,
+      "details": {
+        "normalized_to_english": true,
+        "reason_is_model_abstention": true
+      },
+      "abstention_reason": "model_abstained",
+      "external_provider_calls": 0
+    },
+    {
+      "id": "invalid_source_id_fails_closed",
+      "expected_status": "abstained",
+      "observed_status": "abstained",
+      "passed": true,
+      "details": {
+        "reason_is_validation_failure": true,
+        "invalid_id_recorded": true
+      },
+      "abstention_reason": "citation_validation_failed",
+      "external_provider_calls": 0
+    },
+    {
+      "id": "uncited_claim_returns_coverage_warning",
+      "expected_status": "answered",
+      "observed_status": "answered",
+      "passed": true,
+      "details": {
+        "answer_returned": true,
+        "uncited_claim_recorded": true,
+        "coverage_warning_recorded": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "evidence_prompt_injection_is_untrusted",
+      "expected_status": "answered",
+      "observed_status": "answered",
+      "passed": true,
+      "details": {
+        "answer_remains_cited": true,
+        "system_marks_evidence_untrusted": true,
+        "injection_is_user_evidence": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "source_conflict_guidance",
+      "expected_status": "answered",
+      "observed_status": "answered",
+      "passed": true,
+      "details": {
+        "both_sources_cited": true,
+        "conflict_guidance_present": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "provider_http_failures_are_typed",
+      "expected_status": "typed_error",
+      "observed_status": "typed_error",
+      "passed": true,
+      "details": {
+        "http_503_typed": true,
+        "http_401_typed": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    },
+    {
+      "id": "malformed_provider_response_is_typed",
+      "expected_status": "typed_error",
+      "observed_status": "typed_error",
+      "passed": true,
+      "details": {
+        "malformed_response_typed": true
+      },
+      "abstention_reason": null,
+      "external_provider_calls": 0
+    }
+  ],
+  "aggregate": {
+    "case_count": 9,
+    "passed_count": 9,
+    "failed_count": 0,
+    "status": "passed"
+  },
+  "boundary": "Contract behavior only; this report is not a live model-quality or semantic citation-support evaluation."
+}
