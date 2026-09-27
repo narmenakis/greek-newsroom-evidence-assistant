@@ -24,7 +24,7 @@ class UploadLimits:
     """Safety limits applied before a source enters the session registry."""
 
     max_sources: int = 20
-    # Five megabytes (decimal) per uploaded file for the current local phase.
+    # Limit each uploaded file to five megabytes (decimal).
     max_source_bytes: int = 5_000_000
     max_extracted_characters: int = 500_000
     max_chunks_per_source: int = 2_048

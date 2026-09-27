@@ -51,7 +51,7 @@ class Settings:
     embedding_device: str = "cpu"
     embedding_batch_size: int = 8
     chroma_batch_size: int = 64
-    # Reranking is opt-in;
+    # Reranking remains disabled unless explicitly enabled in configuration.
     reranker_enabled: bool = False
     reranker_model: str = "Qwen/Qwen3-Reranker-0.6B"
     reranker_device: str = "auto"
@@ -70,9 +70,9 @@ class Settings:
     llm_max_retries: int = 2
     llm_max_tokens: int = 8192
     llm_temperature: float = 0.1
-    # DeepSeek V4.1-Flash reasons
+    # DeepSeek reasoning is disabled by default to preserve the visible answer budget.
     deepseek_thinking: str = "disabled"
-    # Qwen3.5 reasons by default
+    # Ollama reasoning is disabled by default for predictable local responses.
     ollama_reasoning_effort: str = "none"
     deepseek_api_key: str | None = field(default=None, repr=False)
     tavily_mcp_url: str = "https://mcp.tavily.com/mcp"

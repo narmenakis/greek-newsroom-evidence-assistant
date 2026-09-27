@@ -71,8 +71,8 @@ class HybridRetriever:
             raise ValueError("query cannot be empty")
         if limit <= 0:
             raise ValueError("limit must be greater than zero")
-        # Keep enough candidates for fusion even when the caller asks for a
-        # small final evidence set (the Phase 3 default is 30 from each path).
+        # Keep enough candidates for fusion before applying the requested final
+        # evidence limit.
         candidate_limit = max(limit * 5, 30)
         dense_results = self.dense.retrieve(query, limit=candidate_limit, where=where)
         lexical_results = self.lexical.retrieve(query, limit=candidate_limit, where=where)

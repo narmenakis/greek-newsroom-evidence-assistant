@@ -1,4 +1,4 @@
-"""Resumable local Chroma index builder for the Phase 1 AI core."""
+"""Resumable local Chroma index builder for the journalism RAG core."""
 
 from __future__ import annotations
 

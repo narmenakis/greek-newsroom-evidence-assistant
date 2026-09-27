@@ -1,4 +1,4 @@
-"""Command-line grounded answer tool for the selected Phase 2 provider."""
+"""Command-line grounded answer tool for the selected provider."""
 
 from __future__ import annotations
 

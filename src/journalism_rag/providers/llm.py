@@ -585,8 +585,7 @@ class DeepSeekChatModel(OpenAICompatibleChatModel):
 class OllamaChatModel(OpenAICompatibleChatModel):
     """Explicit local Ollama adapter; it never downloads models automatically."""
 
-    # Ollama's OpenAI-compatible endpoint is verified for the selected local
-    # model in Phase 8.  Tool calls remain non-streaming and use ``generate``.
+    # Tool calls use a bounded non-streaming exchange; direct answers may stream.
     supports_tool_calling = True
     supports_streaming = True
 
